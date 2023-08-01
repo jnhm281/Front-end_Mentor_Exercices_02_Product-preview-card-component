@@ -1,0 +1,95 @@
+.content {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  background-color: $white;
+  margin: 2rem 1rem;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  max-width: 343px;
+
+  &__product-image-mobile {
+    border-radius: 10px 10px 0 0;
+    display: block;
+  }
+
+  &__product-image-desktop {
+    display: none;
+  }
+
+  &__text {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  &__product-type {
+    font-family: $font-body;
+    text-transform: uppercase;
+    letter-spacing: 0.25rem;
+    color: $neutral-color;
+    font-size: 14px;
+  }
+
+  &__product-title {
+    font-weight: 700;
+    line-height: 0.95;
+  }
+
+  &__product-description {
+    font-size: 14px;
+    color: $neutral-color;
+    line-height: 1.5;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  &__price-new {
+    font-family: $font-title;
+    font-size: 2rem;
+    color: $primary-color;
+  }
+
+  &__price-old {
+    font-family: $font-body;
+    color: $neutral-color;
+    font-size: 14px;
+    text-decoration: line-through;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .card {
+    flex-direction: row;
+    max-width: 540px;
+
+    &__image {
+      width: 50%;
+      object-fit: cover;
+    }
+
+    &__product-image-mobile {
+      display: none;
+    }
+
+    &__product-image-desktop {
+      border-radius: 10px 0 0 10px;
+      display: block;
+    }
+
+    &__text {
+      width: 50%;
+    }
+  }
+}
